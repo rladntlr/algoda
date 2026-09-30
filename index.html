@@ -1,0 +1,241 @@
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="utf-8"/>
+            <style data-wv-platform-visibility>html,body{margin:0;padding:0}html:not([data-zs-runtime="ready"]) .zs-aos,html:not([data-zs-runtime="ready"]) .zs-motion-row{opacity:1!important;transform:none!important;transition:none!important}</style><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">                                                    <meta name="robots" content="index,follow"/>
+            
+            <title>ALGO:DA</title>
+
+                                        <meta name="description" content="JAVA EXECUTION VISUALIZER · DEMO코드가 실행되는 순간을눈으로 이해하세요.Java 알고리즘의 배열, 반복문, 변수 변화를 한 단계씩 따라가며 이해하는 실행 시각화 Studio.Studio 시작하기어떻게 동작하나요?현재 데모는 버블 정렬 실행 흐름을 시각화합니다.">
+                                    <meta property="og:title" content="ALGO:DA"/>
+            <meta property="og:description" content="JAVA EXECUTION VISUALIZER · DEMO코드가 실행되는 순간을눈으로 이해하세요.Java 알고리즘의 배열, 반복문, 변수 변화를 한 단계씩 따라가며 이해하는 실행 시각화 Studio.Studio 시작하기어떻게 동작하나요?현재 데모는 버블 정렬 실행 흐름을 시각화합니다."/>            <meta property="og:type" content="website">
+            <meta property="og:site_name" content="ALGO:DA">
+                            <meta property="og:url" content="https://wv1787545699134777.zaemit.ai/">
+                        <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ALGO:DA"><meta name="twitter:description" content="JAVA EXECUTION VISUALIZER · DEMO코드가 실행되는 순간을눈으로 이해하세요.Java 알고리즘의 배열, 반복문, 변수 변화를 한 단계씩 따라가며 이해하는 실행 시각화 Studio.Studio 시작하기어떻게 동작하나요?현재 데모는 버블 정렬 실행 흐름을 시각화합니다.">            
+            <!-- 로컬 실서버 분기 처리 필요 -->
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                        <link rel="canonical" href="https://wv1787545699134777.zaemit.ai/">
+                        
+                        
+                                    <script type="text/javascript">
+var WEB_ROOT = "https:\/\/wv1787545699134777.zaemit.ai\/";
+(function(){
+    try{
+        var hn = location.hostname;
+        if (hn === 'zaemit.ai' || hn.slice(-10) === '.zaemit.ai') return;
+        var base = new URL(WEB_ROOT, location.origin).pathname.replace(/\/+$/, '');
+        if (!base) return;
+        var MEMBER_RE = /^\/(login|logout|sign-up|signup|my-info|find-account|member-out)([\/?#]|$)/;
+        var reroot = function(h){
+            if (typeof h !== 'string' || h.charAt(0) !== '/' || h.charAt(1) === '/') return h;
+            if (h === base || h.indexOf(base + '/') === 0) return h;
+            if (h === '/web' || h.indexOf('/web/') === 0) return base + h.slice(4);
+            if (h.indexOf('/page/') === 0 || MEMBER_RE.test(h)) return base + h;
+            return h;
+        };
+        var f = window.fetch;
+        if (f) window.fetch = function(input, init){
+            return f.call(window, typeof input === 'string' ? reroot(input) : input, init);
+        };
+        var xo = window.XMLHttpRequest && XMLHttpRequest.prototype.open;
+        if (xo) XMLHttpRequest.prototype.open = function(){
+            var a = Array.prototype.slice.call(arguments);
+            if (typeof a[1] === 'string') a[1] = reroot(a[1]);
+            return xo.apply(this, a);
+        };
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('a[href^="/"]').forEach(function(a){
+                var h = a.getAttribute('href') || '';
+                if (h === base || h.indexOf(base + '/') === 0) return;
+                if (h === '/') { a.setAttribute('href', base + '/'); return; }
+                // 홈 앵커·질의(/#form, /?x)와 /web/… 링크도 같은 규칙 — 종전엔 fetch 만 고쳐 기본 헤더·푸터의
+                // 로그인·약관·"상담 신청" 버튼이 경로 서빙 주소에서 404 였다.
+                if (h.charAt(1) === '#' || h.charAt(1) === '?') { a.setAttribute('href', base + '/' + h.slice(1)); return; }
+                var r = reroot(h);
+                if (r !== h) a.setAttribute('href', r);
+            });
+        });
+    }catch(e){}
+})();
+</script>            
+<style type="text/css" data-font-css></style>
+<style type="text/css" data-theme-common-css>@charset "utf-8";
+
+/* 메인과 서브에서 공통으로 쓰는 css */
+.point0{color:#bdaea0 !important;}
+.point0 > * {color:#bdaea0 !important;}
+.bg_point0{background-color:#bdaea0 !important;}
+.svg_point0{fill:#bdaea0 !important;}
+.stroke_point0{stroke:#bdaea0 !important;}
+.border_point0{border-color:#bdaea0 !important;}
+.before_point0::before{color:#bdaea0 !important;}
+.before_bg_point0::before{background-color: #bdaea0 !important;}
+input:checked + label.checked_before_bg_point0::before{background-color: #bdaea0 !important;}
+.after_point0::after{color:#bdaea0 !important;}
+.after_bg_point0::after{background-color:#bdaea0 !important;}
+
+.point1{color:#5bcdff !important;}
+.point1 > *{color:#5bcdff !important;}
+.bg_point1{background-color:#5bcdff !important;}
+.svg_point1{fill:#5bcdff !important;}
+.stroke_point1{stroke:#5bcdff !important;}
+.border_point1{border-color:#5bcdff !important;}
+.before_point1::before{color:#5bcdff !important;}
+.before_bg_point1::before{background-color:#5bcdff !important;}
+input:checked + label.checked_before_bg_point1::before{background-color: #5bcdff !important;}
+.after_point1::after{color:#5bcdff !important;}
+.after_bg_point1::after{background-color:#5bcdff !important;}
+
+.point2{color:#75fcff !important;}
+.point2 > *{color:#75fcff !important;}
+.bg_point2{background-color:#75fcff !important;}
+.svg_point2{fill:#75fcff !important;}
+.stroke_point2{stroke:#75fcff !important;}
+.border_point2{border-color:#75fcff !important;}
+.before_point2::before{color:#75fcff !important;}
+.before_bg_point2::before{background-color:#75fcff !important;}
+input:checked + label.checked_before_bg_point2::before{background-color: #75fcff !important;}
+.after_point2::after{color:#75fcff !important;}
+.after_bg_point2::after{background-color:#75fcff !important;}
+
+@media all and (min-width:992px){
+    .h_point0:hover{color:#bdaea0 !important;}
+    .bg_h_point0:hover{background-color:#bdaea0 !important;}
+    .svg_h_point0:hover{fill:#bdaea0 !important;}
+    .border_h_point0:hover{border-color:#bdaea0 !important;}
+
+    .h_point1:hover{color:#5bcdff !important;}
+    .bg_h_point1:hover{background-color:#5bcdff !important;}
+    .svg_h_point1:hover{fill:#5bcdff !important;}
+    .border_h_point1:hover{border-color:#5bcdff !important;}
+
+    .h_point2:hover{color:#75fcff !important;}
+    .bg_h_point2:hover{background-color:#75fcff !important;}
+    .svg_h_point2:hover{fill:#75fcff !important;}
+    .border_h_point2:hover{border-color:#75fcff !important;}
+}
+</style>
+<style type="text/css" data-block-css>*{box-sizing:border-box}.algoda{--bg:#080a0e;--panel:#0e1219;--panel2:#121722;--line:#252c3a;--text:#f2f5fb;--muted:#96a0b4;--cyan:#31e6c8;--purple:#9b7bff;min-height:100vh;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.algoda button,.algoda input,.algoda select{font:inherit}.hero{min-height:76vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(70px,10vw,130px) clamp(20px,8vw,120px);background:radial-gradient(circle at 75% 25%,rgba(155,123,255,.15),transparent 30%),radial-gradient(circle at 25% 70%,rgba(49,230,200,.1),transparent 30%)}.eyebrow,.kicker,.section-head>span,.benefits span,.modal-card>span{font:700 12px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.15em;color:var(--cyan)}.hero h1{font-size:clamp(42px,7vw,88px);line-height:1.02;letter-spacing:-.055em;margin:18px 0;max-width:1100px}.hero h1 span{color:#b7c0d2}.hero>p{max-width:690px;color:var(--muted);font-size:clamp(17px,2vw,21px);line-height:1.7}.hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.hero-actions a,.benefits button{padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:800}.primary{background:var(--cyan);color:#06110f}.secondary{border:1px solid var(--line);color:#d9e0ee;background:#10141c}.demo-note{margin-top:30px;padding:12px 15px;border:1px solid #26303c;background:#0c1117;border-radius:10px;color:#9da8ba;font-size:13px}.demo-note strong{color:#d8e1ef}.features,.studio-wrap,.benefits{padding:90px clamp(18px,6vw,90px);max-width:1500px;margin:auto}.section-head{max-width:760px}.section-head h2,.studio-top h2,.benefits h2{font-size:clamp(30px,4vw,52px);letter-spacing:-.04em;margin:12px 0}.section-head p,.benefits p{color:var(--muted);line-height:1.7}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}.feature-grid article{background:linear-gradient(145deg,#10151d,#0c1016);border:1px solid var(--line);padding:28px;border-radius:16px}.feature-grid b{color:var(--purple);font-family:monospace}.feature-grid h3{margin:28px 0 8px}.feature-grid p{color:var(--muted);line-height:1.6}.studio-wrap{max-width:1600px}.studio-top{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:20px}.quota{display:grid;grid-template-columns:auto auto;gap:5px 14px;align-items:center;border:1px solid var(--line);padding:12px 14px;border-radius:12px;background:#0d1118}.quota span{color:var(--muted);font-size:12px}.quota strong{font-size:13px}.quota button{grid-column:1/-1;border:0;background:none;color:var(--cyan);text-align:left;padding:2px 0;cursor:pointer}.studio-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:14px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;overflow:hidden;min-width:0}.panel-title{height:46px;padding:0 15px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#0b0f15;color:#b5bfd1;font:600 12px ui-monospace,monospace}.dotset{color:#596274;letter-spacing:4px}.code-editor{padding:14px 0;background:#0b0e14;overflow:auto;min-height:385px}.code-editor>div{display:grid;grid-template-columns:45px 1fr;min-width:650px;padding:4px 14px 4px 0;border-left:2px solid transparent}.code-editor>div.active{background:linear-gradient(90deg,rgba(49,230,200,.14),rgba(49,230,200,.02));border-left-color:var(--cyan)}.code-editor i{font-style:normal;text-align:right;padding-right:14px;color:#586275;user-select:none}.code-editor code{white-space:pre;color:#d9e1ef;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.input-area{padding:16px;border-top:1px solid var(--line)}.input-area label{display:flex;justify-content:space-between;font-size:12px;color:#c6cfde}.input-area small{color:#737e92}.input-row{display:flex;gap:8px;margin:8px 0 12px}.input-row input{flex:1;min-width:0;background:#090c11;border:1px solid #343c4c;color:#fff;border-radius:9px;padding:11px}.input-row button,.controls button,.controls select,.errors button{border:1px solid #343c4c;background:#141a24;color:#e7ecf5;border-radius:9px;padding:9px 12px;cursor:pointer}.input-row button{background:#27213d;border-color:#574797;color:#e9e2ff}.input-area details{color:var(--muted);font-size:12px}.input-area details code{color:var(--cyan)}.viz-panel{padding-bottom:16px}.array-zone{padding:30px 20px 18px;min-height:275px}.bars{height:155px;display:flex;align-items:flex-end;justify-content:center;gap:9px}.bar{width:min(58px,12%);min-height:18px;background:linear-gradient(180deg,var(--purple),#5746a8);border-radius:7px 7px 2px 2px;transition:height .25s,background .25s;display:flex;justify-content:center;padding-top:5px;font:700 11px monospace}.bar.compare{background:linear-gradient(180deg,var(--cyan),#158b7a);color:#03110f}.bar.swap{outline:2px solid #ffb454;outline-offset:2px}.cells,.indices{display:flex;justify-content:center;gap:9px}.cell,.idx{width:min(58px,12%);text-align:center}.cell{border:1px solid #394254;background:#121823;padding:8px 2px;margin-top:8px;border-radius:6px;font:700 13px monospace}.idx{color:#657085;font:11px monospace;padding-top:5px}.state-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 16px 14px}.state-grid div{background:#0a0e14;border:1px solid #202736;border-radius:9px;padding:10px}.state-grid span,.mini-grid span{display:block;color:#6f7a8f;font-size:10px;text-transform:uppercase;margin-bottom:5px}.state-grid strong{font:700 13px monospace}.mini-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:8px;padding:0 16px 14px}.stack,.console{background:#090c11;border:1px solid #202736;border-radius:9px;padding:10px;min-height:84px}.stack code{display:block;color:#9b7bff;font-size:11px;padding:2px}.console pre{white-space:pre-wrap;color:#31e6c8;font:11px/1.4 monospace;margin:0}.controls{display:flex;gap:7px;justify-content:center;align-items:center;padding:0 16px 10px}.controls .play{background:var(--cyan);border-color:var(--cyan);color:#04110e;font-weight:900;min-width:90px}.controls select{margin-left:4px}#timeline{display:block;width:calc(100% - 32px);margin:0 16px;accent-color:var(--purple)}.errors{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.error-card{border:1px solid var(--line);background:#0d1118;border-radius:14px;padding:18px}.error-card>span{font:700 10px monospace;letter-spacing:.08em}.compile>span{color:#ffb454}.runtime>span{color:#ff7085}.error-card strong{display:block;margin:8px 0;font:700 13px monospace}.error-card p,.error-card small{color:var(--muted);font-size:12px}.runtime button{margin:5px 5px 5px 0}.benefits{margin-top:30px;margin-bottom:80px;border:1px solid #2b3150;border-radius:24px;background:radial-gradient(circle at 80% 50%,rgba(155,123,255,.16),transparent 40%),#0d1118;display:flex;justify-content:space-between;align-items:center;gap:30px}.benefits button{border:0;background:var(--purple);color:#fff;cursor:pointer;white-space:nowrap}.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.72);display:grid;place-items:center;padding:20px}.modal[hidden]{display:none}.modal-card{position:relative;width:min(470px,100%);background:#111620;border:1px solid #353e51;border-radius:18px;padding:30px;box-shadow:0 30px 90px rgba(0,0,0,.5)}.modal-card h2{font-size:28px;margin:10px 0}.modal-card p,.modal-card li{color:var(--muted);line-height:1.6}.modal-close{position:absolute;right:15px;top:12px;border:0;background:none;color:#fff;font-size:28px;cursor:pointer}.auth-btn{width:100%;margin-top:9px;padding:12px;border:1px solid #343c4c;border-radius:10px;background:#191f2b;color:#7e899d}.modal-card ul{padding-left:20px;margin-bottom:0}.algoda :focus-visible{outline:2px solid var(--cyan);outline-offset:3px}@media(max-width:950px){.studio-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr}.errors{grid-template-columns:1fr}.studio-top,.benefits{align-items:flex-start;flex-direction:column}.quota{width:100%}}@media(max-width:600px){.hero{min-height:70vh}.features,.studio-wrap,.benefits{padding:60px 16px}.state-grid{grid-template-columns:repeat(2,1fr)}.controls{flex-wrap:wrap}.array-zone{padding-left:8px;padding-right:8px}.bars,.cells,.indices{gap:4px}.bar,.cell,.idx{width:15%}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+
+            <!-- 로컬 실서버 분기 처리 필요 -->
+            
+            <!-- 로컬 실서버 분기 처리 필요 -->
+                                </head>
+        <body  data-wv-pc="pc" data-wv-os='Windows'>
+                            <!-- <div id="wvNavi">
+                <a href="#contentArea"><span>본문 바로가기</span></a>
+            </div> -->
+                    <style type="text/css" data-zs-editor-css>
+/* zaemit-editor.css — 에디터가 생성하는 공통 스타일의 단일 소스 (게시본 공통).
+ *
+ * 딜리버리: OutWriter::HTML_USER_SERVICE_PAGE 가 렌더 시점에 이 파일 내용을 <style data-zs-editor-css> 로
+ *   head 에 인라인한다(플러그인 CSS 인라인과 동일 원리). 저장(page.src)이 아닌 렌더 시점이라:
+ *     - 기존 페이지도 재저장 없이 즉시 적용, 에디터 캔버스(mirror)·라이브 공용.
+ *     - 이 파일 하나만 고치면 전 사이트 다음 렌더에 전파(단일 소스 유지보수).
+ *   ※ 에디터 srcdoc 캔버스는 별도 경로라 동일 규칙을 client srcdoc.ts BASELINE_STYLE 에도 둔다(두 런타임 특성상 불가피한 이중).
+ *
+ * 원칙: 전 페이지에 인라인되므로 lean 유지. 규칙은 특정 셀렉터에만 매칭되게(무관 페이지 무해).
+ */
+
+/* ── box-sizing 정규화 — width:100% + padding 요소가 가로로 삐져나가는 것 방지 ──
+ * 재밋 페이지는 섹션별 리셋(*,*:where([data-zs-scope=…]){box-sizing:border-box})으로 대부분 border-box 지만,
+ * 그 리셋이 닿지 않는 요소(일부 요소의 인라인 style: width:100%+padding, box-sizing 미지정)는 UA 기본 content-box 라
+ * padding 만큼 가로로 넘친다. 전역 (0,0,0) 셀렉터로 "기본값"만 border-box 로 통일한다.
+ * ★!important 없음 — 작성자가 명시한 box-sizing(클래스 등 특이성 ≥ (0,1,0))은 그대로 이겨 보존(안전한 최소 개입).
+ */
+*, *::before, *::after { box-sizing: border-box }
+
+/* ── 반응형 줄바꿈: <br data-wv-br data-wv-br{size}…> — 지정한 뷰포트 밴드에서만 줄바꿈, 그 외엔 숨김 ──
+ * 모델: data-wv-br(마커) = 반응형 br → 기본 숨김. data-wv-br{size} = 그 밴드에서 줄바꿈(노출).
+ *   예) <br data-wv-br data-wv-br480> = 모바일에서만 줄바꿈.  <br data-wv-br data-wv-br480 data-wv-br1200> = 모바일·PC.
+ *   일반 <br>(마커 없음)은 전 해상도 줄바꿈(반응형 아님).
+ * size 매핑(밴드 경계는 재밋 원본 768/992/1200/1600 정렬, suffix 는 디바이스 라벨):
+ *   480=모바일(0–767) / 768=태블릿(768–991) / 992=랩탑(992–1199) / 1200=PC(1200–1599) / 1600=와이드(1600+)
+ * ★규칙 순서 고정 — base(숨김) 먼저, 밴드(노출) 나중. 동일 특이성(0,1,1)이라 소스 순서로 밴드가 이겨야 노출됨.
+ * br 로 스코프해 다른 요소엔 영향 없음. display-hide(블록 통째 숨김)와 분리.
+ */
+br[data-wv-br]                                    { display:none   !important }
+@media (max-width:767px)                          { br[data-wv-br480]  { display:inline !important } }
+@media (min-width:768px)  and (max-width:991px)   { br[data-wv-br768]  { display:inline !important } }
+@media (min-width:992px)  and (max-width:1199px)  { br[data-wv-br992]  { display:inline !important } }
+@media (min-width:1200px) and (max-width:1599px)  { br[data-wv-br1200] { display:inline !important } }
+@media (min-width:1600px)                         { br[data-wv-br1600] { display:inline !important } }
+
+/* ── 요소 숨기기: [data-wv-hide{size}] — 지정한 뷰포트 밴드에서 실제 숨김 ──
+ * 모델: data-wv-hide480 = 모바일(≤767)에서 숨김. data-wv-hide1200 = PC(1200~1599)에서 숨김. 각 뷰포트 독립.
+ *   에디터 편집 모드(body.editing)에선 숨기지 않고 빗금+점선으로 표시(되돌리기 가능) — 그래서 body:not(.editing) 스코프.
+ *   게시 사이트엔 editing 클래스가 없어 항상 매칭 → 실제 display:none. (반응형 br 패턴과 동형) */
+@media (max-width:767px)                          { body:not(.editing) [data-wv-hide480]  { display:none !important } }
+@media (min-width:768px)  and (max-width:991px)   { body:not(.editing) [data-wv-hide768]  { display:none !important } }
+@media (min-width:992px)  and (max-width:1199px)  { body:not(.editing) [data-wv-hide992]  { display:none !important } }
+@media (min-width:1200px) and (max-width:1599px)  { body:not(.editing) [data-wv-hide1200] { display:none !important } }
+@media (min-width:1600px)                         { body:not(.editing) [data-wv-hide1600] { display:none !important } }
+
+</style>
+        <div data-wv-layout="layout" data-wv-layout-element="layout_screen"
+             data-wv-layout-seq="1"
+             data-wv-page-seq="4"
+             data-wv-menu-seq="-1" >
+            <script type="text/javascript">
+var WEB_ROOT = "https:\/\/wv1787545699134777.zaemit.ai\/";
+(function(){
+    try{
+        var hn = location.hostname;
+        if (hn === 'zaemit.ai' || hn.slice(-10) === '.zaemit.ai') return;
+        var base = new URL(WEB_ROOT, location.origin).pathname.replace(/\/+$/, '');
+        if (!base) return;
+        var MEMBER_RE = /^\/(login|logout|sign-up|signup|my-info|find-account|member-out)([\/?#]|$)/;
+        var reroot = function(h){
+            if (typeof h !== 'string' || h.charAt(0) !== '/' || h.charAt(1) === '/') return h;
+            if (h === base || h.indexOf(base + '/') === 0) return h;
+            if (h === '/web' || h.indexOf('/web/') === 0) return base + h.slice(4);
+            if (h.indexOf('/page/') === 0 || MEMBER_RE.test(h)) return base + h;
+            return h;
+        };
+        var f = window.fetch;
+        if (f) window.fetch = function(input, init){
+            return f.call(window, typeof input === 'string' ? reroot(input) : input, init);
+        };
+        var xo = window.XMLHttpRequest && XMLHttpRequest.prototype.open;
+        if (xo) XMLHttpRequest.prototype.open = function(){
+            var a = Array.prototype.slice.call(arguments);
+            if (typeof a[1] === 'string') a[1] = reroot(a[1]);
+            return xo.apply(this, a);
+        };
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('a[href^="/"]').forEach(function(a){
+                var h = a.getAttribute('href') || '';
+                if (h === base || h.indexOf(base + '/') === 0) return;
+                if (h === '/') { a.setAttribute('href', base + '/'); return; }
+                // 홈 앵커·질의(/#form, /?x)와 /web/… 링크도 같은 규칙 — 종전엔 fetch 만 고쳐 기본 헤더·푸터의
+                // 로그인·약관·"상담 신청" 버튼이 경로 서빙 주소에서 404 였다.
+                if (h.charAt(1) === '#' || h.charAt(1) === '?') { a.setAttribute('href', base + '/' + h.slice(1)); return; }
+                var r = reroot(h);
+                if (r !== h) a.setAttribute('href', r);
+            });
+        });
+    }catch(e){}
+})();
+</script><div class="wrapper">
+    <div class='col-12' data-wv-layout-element='skin-page' data-wv-layout-element-param='{id:}' contenteditable='false' id='contentArea'><script>/* wv-domready */(function(){var __wvRun=function(){
+(()=>{const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];let steps=[],pos=0,timer=null,speed=1,remaining=3;const els={bars:$('#bars'),cells:$('#cells'),indices:$('#indices'),i:$('#iVal'),j:$('#jVal'),compare:$('#compareVal'),swap:$('#swapVal'),loop:$('#loopVal'),temp:$('#tempVal'),console:$('#consoleOut'),step:$('#stepLabel'),timeline:$('#timeline'),play:$('#playBtn'),input:$('#arrayInput'),expected:$('#expectedOutput'),quota:$('#quotaText')};function build(a){steps=[];let arr=[...a],loops=0;steps.push({a:[...arr],line:1,i:null,j:null,compare:null,swap:null,temp:null,loops,out:'// 배열 초기화'});for(let i=0;i<arr.length-1;i++){steps.push({a:[...arr],line:2,i,j:null,compare:null,swap:null,temp:null,loops,out:'// 바깥 반복 i = '+i});for(let j=0;j<arr.length-1-i;j++){loops++;steps.push({a:[...arr],line:3,i,j,compare:[j,j+1],swap:null,temp:null,loops,out:'// j = '+j});let will=arr[j]>arr[j+1];steps.push({a:[...arr],line:4,i,j,compare:[j,j+1],swap:will?[j,j+1]:null,temp:null,loops,out:arr[j]+' > '+arr[j+1]+' → '+(will?'true':'false')});if(will){let temp=arr[j];steps.push({a:[...arr],line:5,i,j,compare:[j,j+1],swap:[j,j+1],temp,loops,out:'temp = '+temp});arr[j]=arr[j+1];steps.push({a:[...arr],line:6,i,j,compare:[j,j+1],swap:[j,j+1],temp,loops,out:'arr['+j+'] = '+arr[j]});arr[j+1]=temp;steps.push({a:[...arr],line:7,i,j,compare:[j,j+1],swap:[j,j+1],temp,loops,out:'swap 완료 → ['+arr.join(', ')+']'});}}}steps.push({a:[...arr],line:11,i:null,j:null,compare:null,swap:null,temp:null,loops,out:'['+arr.join(', ')+']'});els.timeline.max=steps.length-1;els.expected.textContent='['+arr.join(', ')+']';pos=0;render()}function render(){let s=steps[pos];if(!s)return;let max=Math.max(...s.a.map(v=>Math.abs(v)),1);els.bars.innerHTML=s.a.map((v,k)=>'<div class="bar '+(s.compare&&s.compare.includes(k)?'compare ':'')+(s.swap&&s.swap.includes(k)?'swap':'')+'" style="height:'+Math.max(18,Math.round(Math.abs(v)/max*145))+'px">'+v+'</div>').join('');els.cells.innerHTML=s.a.map(v=>'<div class="cell">'+v+'</div>').join('');els.indices.innerHTML=s.a.map((_,k)=>'<div class="idx">'+k+'</div>').join('');els.i.textContent=s.i??'—';els.j.textContent=s.j??'—';els.compare.textContent=s.compare?s.compare.join(' ↔ '):'—';els.swap.textContent=s.swap?'YES':'—';els.loop.textContent=s.loops;els.temp.textContent=s.temp??'—';els.console.textContent=s.out;els.step.textContent='Step '+pos+' / '+(steps.length-1);els.timeline.value=pos;$$('#codeEditor>div').forEach(d=>d.classList.toggle('active',Number(d.dataset.line)===s.line));}function stop(){clearInterval(timer);timer=null;els.play.textContent='▶ 재생'}function play(){if(timer){stop();return}if(pos>=steps.length-1)pos=0;els.play.textContent='Ⅱ 일시정지';timer=setInterval(()=>{if(pos<steps.length-1){pos++;render()}else stop()},Math.max(180,750/speed))}function parse(){let a=els.input.value.split(',').map(x=>Number(x.trim())).filter(Number.isFinite);if(!a.length||a.length>10){els.console.textContent='입력 오류: 숫자 1~10개를 쉼표로 구분하세요.';return null}return a}$('#runInput').addEventListener('click',()=>{if(remaining<=0){els.quota.textContent='오늘 할당량을 모두 사용했어요. 로그인하면 무료로 계속 사용할 수 있어요.';openModal();return}let a=parse();if(!a)return;remaining--;els.quota.textContent=remaining?('오늘 '+remaining+'회 남음'):'오늘 할당량을 모두 사용했어요. 로그인하면 무료로 계속 사용할 수 있어요.';stop();build(a)});$('#resetBtn').addEventListener('click',()=>{stop();pos=0;render()});$('#prevBtn').addEventListener('click',()=>{stop();pos=Math.max(0,pos-1);render()});$('#nextBtn').addEventListener('click',()=>{stop();pos=Math.min(steps.length-1,pos+1);render()});els.play.addEventListener('click',play);els.timeline.addEventListener('input',e=>{stop();pos=Number(e.target.value);render()});$('#speedSelect').addEventListener('change',e=>{speed=Number(e.target.value);if(timer){stop();play()}});function openModal(){let m=$('#loginModal');m.hidden=false;$('#closeModal').focus()}function closeModal(){$('#loginModal').hidden=true}$$('[data-open-login]').forEach(b=>b.addEventListener('click',openModal));$('#closeModal').addEventListener('click',closeModal);$('#loginModal').addEventListener('click',e=>{if(e.target.id==='loginModal')closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#loginModal').hidden)closeModal()});$$('[data-help]').forEach(b=>b.addEventListener('click',()=>{let t={self:'좋아요. 반복문의 종료 조건과 배열의 마지막 인덱스를 직접 비교해 보세요.',hint:'힌트: 배열 길이가 N이면 마지막 인덱스는 N-1입니다. j+1이 N이 되지 않게 해야 합니다.',answer:'답: 인접 원소를 볼 때 j < arr.length - 1 - i 조건으로 범위를 제한합니다.'};$('#helpText').textContent=t[b.dataset.help]}));let en=false;function lang(){en=!en;document.documentElement.lang=en?'en':'ko';let h=$('.hero h1');let p=$('.hero>p');if(en){h.innerHTML='<span>See every moment</span><br>your code executes.';p.textContent='Understand Java algorithms step by step as arrays, loops, and variables change.'}else{h.innerHTML='<span>코드가 실행되는 순간을</span><br>눈으로 이해하세요.';p.textContent='Java 알고리즘의 배열, 반복문, 변수 변화를 한 단계씩 따라가며 이해하는 실행 시각화 Studio.'}}let hb=document.getElementById('headerLang');if(hb)hb.addEventListener('click',lang);build([5,1,4,2,8]);})();
+};if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",__wvRun);}else{__wvRun();}})();</script>
+<header data-wv-inc="M6a8be174cd41c1179813" data-zs-scope="cd4fdbb6" class="zsdf-h"><div class="zsdf-hin"><a class="zsdf-logo" href="./">ALGO:DA</a><nav class="zsdf-nav"><ul><li><a href="./">홈</a></li></ul></nav><div class="zsdf-util"><a href="#features">기능</a><a class="zsdf-join" href="#studio">Studio</a></div></div></header>
+<style>:where([data-zs-scope="cd4fdbb6"]) .zsdf-h,.zsdf-h:where([data-zs-scope="cd4fdbb6"]){background:#fff;border-bottom:1px solid #eceef2;position:sticky;top:0;z-index:90}:where([data-zs-scope="cd4fdbb6"]) .zsdf-hin,.zsdf-hin:where([data-zs-scope="cd4fdbb6"]){max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:28px}:where([data-zs-scope="cd4fdbb6"]) .zsdf-logo,.zsdf-logo:where([data-zs-scope="cd4fdbb6"]){font-size:18px;font-weight:800;color:#111;text-decoration:none;letter-spacing:-.02em}:where([data-zs-scope="cd4fdbb6"]) .zsdf-nav,.zsdf-nav:where([data-zs-scope="cd4fdbb6"]){flex:1;min-width:0}:where([data-zs-scope="cd4fdbb6"]) .zsdf-nav ul,.zsdf-nav:where([data-zs-scope="cd4fdbb6"]) ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}:where([data-zs-scope="cd4fdbb6"]) .zsdf-nav a,.zsdf-nav:where([data-zs-scope="cd4fdbb6"]) a{font-size:14px;color:#333;text-decoration:none}:where([data-zs-scope="cd4fdbb6"]) .zsdf-nav a:hover,.zsdf-nav:where([data-zs-scope="cd4fdbb6"]) a:hover{color:#000}:where([data-zs-scope="cd4fdbb6"]) .zsdf-util,.zsdf-util:where([data-zs-scope="cd4fdbb6"]){display:flex;gap:8px;align-items:center;white-space:nowrap}:where([data-zs-scope="cd4fdbb6"]) .zsdf-util a,.zsdf-util:where([data-zs-scope="cd4fdbb6"]) a{font-size:13px;color:#555;text-decoration:none;padding:7px 12px;border-radius:8px}:where([data-zs-scope="cd4fdbb6"]) .zsdf-util a:hover,.zsdf-util:where([data-zs-scope="cd4fdbb6"]) a:hover{background:#f4f5f8}:where([data-zs-scope="cd4fdbb6"]) .zsdf-util a.zsdf-join,.zsdf-util:where([data-zs-scope="cd4fdbb6"]) a.zsdf-join{background:#111;color:#fff}:where([data-zs-scope="cd4fdbb6"]) .zsdf-util a.zsdf-join:hover,.zsdf-util:where([data-zs-scope="cd4fdbb6"]) a.zsdf-join:hover{background:#333}@media(max-width:760px){:where([data-zs-scope="cd4fdbb6"]) .zsdf-nav,.zsdf-nav:where([data-zs-scope="cd4fdbb6"]){display:none}}</style>
+<main id="app" class="algoda"><section class="hero"><div class="eyebrow">ALGO:DA · JAVA EXECUTION VISUALIZER · DEMO</div><h1><span>코드가 실행되는 순간을</span><br>눈으로 이해하세요.</h1><p>Java 알고리즘의 배열, 반복문, 변수 변화를 한 단계씩 따라가며 이해하는 실행 시각화 Studio.</p><div class="hero-actions"><a class="primary" href="#studio">Studio 시작하기</a><a class="secondary" href="#features">어떻게 동작하나요?</a></div><div class="demo-note">현재 데모는 <strong>버블 정렬 실행 흐름</strong>을 시각화합니다. 임의 Java 전체 실행 백엔드는 제공하지 않습니다.</div></section><section id="features" class="features"><div class="section-head"><span>SEE THE FLOW</span><h2>머릿속 실행 과정을 화면 위로</h2><p>코드 줄, 배열, 인덱스, 변수와 출력이 같은 타임라인에서 함께 움직입니다.</p></div><div class="feature-grid"><article><b>01</b><h3>현재 실행 줄</h3><p>지금 어떤 코드가 실행되는지 에디터에서 즉시 강조합니다.</p></article><article><b>02</b><h3>상태 변화</h3><p>i, j, 비교 대상과 swap, 반복 횟수를 단계마다 확인합니다.</p></article><article><b>03</b><h3>직접 제어</h3><p>재생·일시정지·이전·다음·속도·타임라인으로 흐름을 원하는 만큼 되짚습니다.</p></article></div></section><section id="studio" class="studio-wrap"><div class="studio-top"><div><span class="kicker">INTERACTIVE STUDIO</span><h2>Bubble Sort / Java</h2></div><div class="quota"><span>비로그인 분석</span><strong id="quotaText">오늘 3회 남음</strong><button type="button" data-open-login>로그인 혜택</button></div></div><div class="studio-grid"><section class="panel editor-panel" aria-label="Java 코드 및 입력"><div class="panel-title"><span>BubbleSort.java</span><span class="dotset">● ● ●</span></div><div id="codeEditor" class="code-editor" role="region" aria-label="Java 코드"><div data-line="1"><i>1</i><code>int[] arr = {5, 1, 4, 2, 8};</code></div><div data-line="2"><i>2</i><code>for (int i = 0; i &lt; arr.length - 1; i++) {</code></div><div data-line="3"><i>3</i><code>  for (int j = 0; j &lt; arr.length - 1 - i; j++) {</code></div><div data-line="4"><i>4</i><code>    if (arr[j] &gt; arr[j + 1]) {</code></div><div data-line="5"><i>5</i><code>      int temp = arr[j];</code></div><div data-line="6"><i>6</i><code>      arr[j] = arr[j + 1];</code></div><div data-line="7"><i>7</i><code>      arr[j + 1] = temp;</code></div><div data-line="8"><i>8</i><code>    }</code></div><div data-line="9"><i>9</i><code>  }</code></div><div data-line="10"><i>10</i><code>}</code></div><div data-line="11"><i>11</i><code>System.out.println(Arrays.toString(arr));</code></div></div><div class="input-area"><label for="arrayInput">테스트 입력 <small>쉼표로 구분</small></label><div class="input-row"><input id="arrayInput" value="5,1,4,2,8" aria-label="정렬할 배열 값"><button id="runInput" type="button">다시 실행</button></div><details><summary>문제 설명 · 예상 출력</summary><p>인접한 두 수를 비교하며 큰 값을 뒤로 보내 오름차순 정렬합니다.</p><code id="expectedOutput">[1, 2, 4, 5, 8]</code></details></div></section><section class="panel viz-panel" aria-label="실행 시각화"><div class="panel-title"><span>Execution</span><span id="stepLabel">Step 0 / 0</span></div><div class="array-zone"><div id="bars" class="bars" aria-label="배열 막대"></div><div id="cells" class="cells" aria-label="배열 셀"></div><div id="indices" class="indices"></div></div><div class="state-grid"><div><span>현재 i</span><strong id="iVal">—</strong></div><div><span>현재 j</span><strong id="jVal">—</strong></div><div><span>비교</span><strong id="compareVal">—</strong></div><div><span>교환</span><strong id="swapVal">—</strong></div><div><span>반복 횟수</span><strong id="loopVal">0</strong></div><div><span>temp</span><strong id="tempVal">—</strong></div></div><div class="mini-grid"><div class="stack"><span>호출 스택</span><code>main()</code><code>bubbleSort()</code></div><div class="console"><span>출력 콘솔</span><pre id="consoleOut">// 실행 대기 중</pre></div></div><div class="controls"><button id="resetBtn" type="button" aria-label="처음으로">↺</button><button id="prevBtn" type="button" aria-label="이전 단계">←</button><button id="playBtn" type="button" class="play" aria-label="재생 또는 일시정지">▶ 재생</button><button id="nextBtn" type="button" aria-label="다음 단계">→</button><select id="speedSelect" aria-label="재생 속도"><option value="0.5">0.5x</option><option value="1" selected>1x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><input id="timeline" type="range" min="0" max="1" value="0" aria-label="실행 타임라인"></section></div><section class="errors" aria-label="오류 학습 예시"><div class="error-card compile"><span>COMPILE ERROR · EXAMPLE</span><strong>cannot find symbol: variable lenght</strong><p>컴파일 전에 이름과 타입을 다시 확인해 보세요.</p></div><div class="error-card runtime"><span>RUNTIME ERROR · EXAMPLE</span><strong>ArrayIndexOutOfBoundsException</strong><p>배열 길이와 반복문의 종료 조건을 확인해 보세요.</p><div><button type="button" data-help="self">혼자 풀기</button><button type="button" data-help="hint">힌트 보기</button><button type="button" data-help="answer">답 보기</button></div><small id="helpText">원하는 도움 수준을 선택하세요.</small></div></section></section><section class="benefits"><div><span>FREE ACCOUNT</span><h2>로그인하면 학습 흐름을 이어갈 수 있어요.</h2><p>무제한 분석 · 실행 기록 저장 · 공유 링크 기능을 제공할 예정입니다.</p></div><button type="button" data-open-login>로그인 안내 보기</button></section><div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" hidden><div class="modal-card"><button id="closeModal" class="modal-close" type="button" aria-label="닫기">×</button><span>ALGO:DA ACCOUNT</span><h2 id="loginTitle">로그인 기능은 준비 중입니다.</h2><p>이 프로토타입에서는 실제 인증이나 계정 생성이 이루어지지 않습니다.</p><button type="button" class="auth-btn" disabled>G  Google로 계속하기 · 준비 중</button><button type="button" class="auth-btn" disabled>✉ 이메일로 계속하기 · 준비 중</button><ul><li>무제한 코드 분석</li><li>학습 기록 저장</li><li>공유 링크 생성</li></ul></div></div></main>
+<footer data-wv-inc="M6a8be175004099782045" data-zs-scope="5bbf7063" class="zsdf-f"><div class="zsdf-fin"><b class="zsdf-fname">ALGO:DA</b><ul class="zsdf-flinks"><li><a href="#features">기능</a></li><li><a href="#studio">Studio</a></li><li><a href="https://wv1787545699134777.zaemit.ai/">Zaemit 원본</a></li></ul><small>© 2026 ALGO:DA. All rights reserved.</small></div></footer>
+<style>:where([data-zs-scope="5bbf7063"]) .zsdf-f,.zsdf-f:where([data-zs-scope="5bbf7063"]){background:#16181d;color:#c6c9d2;margin-top:0}:where([data-zs-scope="5bbf7063"]) .zsdf-fin,.zsdf-fin:where([data-zs-scope="5bbf7063"]){max-width:1200px;margin:0 auto;padding:40px 20px 44px;display:flex;flex-direction:column;gap:14px}:where([data-zs-scope="5bbf7063"]) .zsdf-fname,.zsdf-fname:where([data-zs-scope="5bbf7063"]){font-size:15px;color:#fff}:where([data-zs-scope="5bbf7063"]) .zsdf-flinks,.zsdf-flinks:where([data-zs-scope="5bbf7063"]){display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}:where([data-zs-scope="5bbf7063"]) .zsdf-flinks a,.zsdf-flinks:where([data-zs-scope="5bbf7063"]) a{font-size:13px;color:#c6c9d2;text-decoration:none}:where([data-zs-scope="5bbf7063"]) .zsdf-flinks a:hover,.zsdf-flinks:where([data-zs-scope="5bbf7063"]) a:hover{color:#fff}:where([data-zs-scope="5bbf7063"]) .zsdf-f small,.zsdf-f:where([data-zs-scope="5bbf7063"]) small{font-size:12px;color:#7d818d}</style></div>
+</div>        </div>
+                                    
+                        
+                
+        <!--  네이버 연관 채널 추가 -->
+        
+        <!-- 퀵메뉴 – 플로팅 버튼 — sitewidget 어댑터(renderFloating) 경유로 body 끝 주입 일원화. 퀵메뉴 비활성 시 어댑터가 빈 문자열 반환(floating 도 내려감). sitewidget 모듈 없는 cp/portal 은 직접 include 폴백(무게이트). -->
+        <div id="floatingBtnCon"></div>
+                
+                </body>
+        </html>
+        
